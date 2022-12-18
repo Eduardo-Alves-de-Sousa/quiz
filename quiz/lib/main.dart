@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(PerguntaApp());
+  runApp(const PerguntaApp());
 }
 
 class PerguntasAppState extends State<PerguntaApp> {
   var perguntaSelecionada = 0;
 
   void responder() {
-    perguntaSelecionada++;
+    setState(() {
+      perguntaSelecionada++;
+    });
     print(perguntaSelecionada);
   }
 
@@ -47,6 +49,9 @@ class PerguntasAppState extends State<PerguntaApp> {
 }
 
 class PerguntaApp extends StatefulWidget {
+  const PerguntaApp({super.key});
+
+  @override
   PerguntasAppState createState() {
     return PerguntasAppState();
   }
