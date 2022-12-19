@@ -59,7 +59,12 @@ class _PerguntasAppState extends State<PerguntaApp> {
             Questao(_perguntas[_perguntaSelecionada]['texto'].toString()),            
             ...respostas.map((t) => Resposta(t, _responder)).toList(),
           ],
-        ) : null,
+        ) : const Center(
+          child: Text(
+            'Parabéns!!',
+            style: TextStyle(fontSize: 28),
+            ), 
+        ),
       ),
     );
   }
